@@ -30,6 +30,8 @@ class RegisterController extends Controller
         ]);
 
         Auth::login($user);
-        return redirect('/');
+
+        // ✅ Redirect to homepage with success flash message
+        return redirect('/')->with('success', 'Sign up successful!');
     }
 }

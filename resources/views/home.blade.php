@@ -56,7 +56,7 @@
             <a href="#new-products" class="inline-block mt-4 px-6 py-2 bg-black text-white font-medium rounded hover:bg-red-500 scroll-smooth">Shop Now →</a>
         </div>
         <div class="mt-8 md:mt-0">
-            <img src="{{ asset('images/bk.jpg') }}" alt="Hero Model" class="w-[20px] h-[20px] object-cover rounded-xl">
+            <img src="{{ asset('images/bk.jpg') }}" alt="Hero Model" class="w-[500px] h-[500px] object-cover rounded-xl">
         </div>
     </div>
 </section>

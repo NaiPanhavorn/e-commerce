@@ -16,18 +16,17 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-        'email'    => 'required|email',
-        'password' => 'required',
-    ]);
+            'email'    => 'required|email',
+            'password' => 'required',
+        ]);
 
-    if (Auth::attempt($credentials)) {
-        $request->session()->regenerate();
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-        // After successful login, redirect admin to dashboard
-        return redirect()->intended('/dashboard');
-    }
+            // ✅ Redirect to homepage with success flash message
+            return redirect('/')->with('success', 'Sign in successful!');
+        }
 
         return back()->with('error', 'The provided credentials do not match our records.');
     }
 }
-
