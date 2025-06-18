@@ -14,15 +14,14 @@ class UsersTableSeeder extends Seeder
             ['email' => 'admin@example.com'], // Check if email exists
             [
                 'name' => 'Admin User',
-                'password' => Hash::make('admin123'), // Don't hardcode hashed password
-                'role' => 'admin',
+                'password' => Hash::make('admin123'),
+                'role' => 'admin',   // Make sure 'role' column exists in users table or remove if not
                 'is_admin' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
         );
 
-        // Add more unique users here if needed:
         DB::table('users')->updateOrInsert(
             ['email' => 'user1@example.com'],
             [
